@@ -15,10 +15,12 @@ def find_and_copy_images(folder_path, image_names, destination_folder):
 
 if __name__ == "__main__":
     file_path = sys.argv[1]
-    print(file_path)
     image_names = ReadFile.read_file_to_list(file_path)
     print(image_names)
     source_path = os.getcwd()
+    print("source path:" + source_path)
     target_path = source_path + "/ResultFile"
+    print("target paht:" + target_path)
+    os.makedirs(target_path)
     result = find_and_copy_images(source_path, image_names, target_path)
     print(result)
